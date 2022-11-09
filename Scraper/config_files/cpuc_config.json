@@ -1,0 +1,15 @@
+{
+    "url": "https://docs.cpuc.ca.gov/SearchRes.aspx?CPUCAdmin=1&daysearch=30",
+    "root_xpath": "//td[@class='ResultTitleTD']/..",
+    "request_headers": {},
+    "payload_data":
+        {
+            "EVENT_TARGET": "rptPages$ctl{:02}$btnPage",
+            "EVENT_VALIDATOR": "//input[@name='__EVENTVALIDATION']/@value",
+            "VIEW_STATE": "//input[@name='__VIEWSTATE']/@value"
+        },
+    "article_title": "//td[@class='ResultTitleTD']/text()",
+    "document_type": "//td[@class='ResultTypeTD']/text()",
+    "article_link": "//a[contains(text(), 'PDF')]/@href",
+    "article_date": "//td[@class='ResultDateTD']/text()"
+}
