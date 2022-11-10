@@ -1,0 +1,18 @@
+{
+    "url": "https://otp.tools.investis.com/clients/us/atnt2/sec/sec-filing.aspx?comingfrom=secshow",
+    "root_xpath": "//div[@class='maincontent']//div[@class='data-row']",
+    "request_headers":
+        {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+        },
+    "payload_data": 
+        {
+            "EVENT_TARGET": "SECViewControl$dpNextPrevLink$ctl00$ctl02",
+            "EVENT_VALIDATOR": "//input[@name='__EVENTVALIDATION']/@value",
+            "VIEW_STATE": "//input[@name='__VIEWSTATE']/@value"
+        },
+    "article_title": "//a[contains(@id, 'lnkDesc')]/text()",
+    "document_type": "//div[contains(@id, 'colFormTypeVal')]/span[@class='data-value']/text()",
+    "article_link": "//a[@title='PDF']/@href",
+    "article_date": "//div[contains(@id, 'colFilingDateVal')]/span[@class='data-value']/text()"
+}
