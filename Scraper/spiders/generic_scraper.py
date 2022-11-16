@@ -1,6 +1,7 @@
 import requests
 import scrapy
 import json
+import pandas
 import dateutil.parser
 from urllib.parse import urlparse
 
@@ -45,8 +46,12 @@ class BaseClass:
         return html_response, response, domain
 
     def write_content(self, text):
-        with open('output.json', 'w') as f:
+        with open('Output.json', 'w') as f:
             json.dump(text, f)
+    
+    def save_as_csv(self, data_list):
+        dataFrame = pandas.DataFrame(data_list)
+        dataFrame.to_excel('Output.xlsx', index=False)
     
     def extract_article(self, results, domain):
         for result in results:
@@ -68,6 +73,7 @@ class BaseClass:
             else:
                 self.next_page = False
                 self.write_content(self.final_data)
+                self.save_as_csv(self.final_data)
                 break
     
     def extract_data(self):
